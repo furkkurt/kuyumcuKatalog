@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./static/output.css" rel="stylesheet">
+</head>
+<body>
+  <div class="w-96 h-128 mt-32 border-4 mx-auto rounded py-8 grid place-items-center">
+    <input class="text-2xl border-4" type="string" name="a" id="a" placeholder="isim"><br>
+    <input class="text-2xl border-4" type="string" name="b" id="b" placeholder="resim"><br>
+    <input class="text-2xl border-4" type="file" name="e" id="e" onchange="deneme()"><br>
+    <!-- <input class="text-2xl border-4" type="number" name="c" id="c" placeholder="fiyat"><br> -->
+     <select id="c">
+        <option value="0">Kategori Seç</option>
+        <option value="yuzuk">Yüzük</option>
+        <option value="taki">Takı</option>
+        <option value="degerliTas">Değerli Taş</option>
+    </select>
+    <button class="border-4" onclick="add(document.getElementById('a').value,document.getElementById('b').value,document.getElementById('c').value)">EKLE</button>
+    <br>
+    <div class="text-center border-t-4">
+      <input class="text-2xl border-l-4 border-r-4 border-b-4 w-1/2" type="number" placeholder="ürün no" id="removeNo">
+      <button class="border-4" onclick="remove(document.getElementById('removeNo').value)">KALDIR</button>
+    </div>
+  </div>
+
+  <script>
+
+  function deneme() {
+    console.log(document.getElementById("e"))
+  }
+    function add(a, b, c) {
+      if(localStorage.getItem("productCount") == undefined)
+        localStorage.setItem("productCount", "0")
+
+      localStorage.setItem("productCount", (parseInt(localStorage.getItem("productCount"))+1).toString())
+      localStorage.setItem("product"+localStorage.getItem("productCount")+"name", a)
+      localStorage.setItem("product"+localStorage.getItem("productCount")+"pic", b)
+      localStorage.setItem("product"+localStorage.getItem("productCount")+"category", c)
+
+      alert("URUN KATALOGA EKLENDI")
+    }
+
+    function remove(n) {
+      localStorage.setItem("productCount", (parseInt(localStorage.getItem("productCount"))-1))
+      localStorage.removeItem("product"+n+"name");
+      localStorage.removeItem("product"+n+"pic");
+      localStorage.removeItem("product"+n+"category");
+      console.log(localStorage)
+      for(let i=1; i<=localStorage.getItem("productCount"); i++) {
+        if (localStorage.getItem("product"+i+"name") == undefined) {
+          localStorage.setItem("product"+i+"name", localStorage.getItem("product"+(i+1)+"name"))
+          localStorage.removeItem("product"+(i+1)+"name")
+          localStorage.setItem("product"+i+"price", localStorage.getItem("product"+(i+1)+"category"))
+          localStorage.removeItem("product"+(i+1)+"price")
+          localStorage.setItem("product"+i+"pic", localStorage.getItem("product"+(i+1)+"pic"))
+          localStorage.removeItem("product"+(i+1)+"pic")
+          console.log(localStorage)
+        }
+      }
+    }
+  </script>
+
+  <script src="./components/header.js"></script>
+  <script src="./components/footer.js"></script>
+  <script src="./components/product.js"></script>
+  <script src="./components/photo2.js"></script>
+</body>
+</html>
