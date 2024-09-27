@@ -16,7 +16,7 @@ template.innerHTML = `
         <p class="pl-2 text-white">+90 552 248 41 38</p>
         <a href="../contacts.html" class="pl-2 text-white hover:scale-110 transition">Diğer sosyal hesaplar</a>
       </div>
-      <div class="w-2/3 hidden md:block border-4 border-white rounded">
+      <div class="w-2/3 hidden md:block border-4 border-white rounded-xl">
 		  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462.96594636788734!2d39.16875036686503!3d38.68447796661449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4076c1b84d10e933%3A0x4baf260d8d4850fc!2zw4dheWRhw6fEsXJhLCBBZG5hbiBLYWh2ZWNpIEJsdiwgMjMzNTAgRWzDonrEscSfIE1lcmtlei9FbGF6xLHEnw!5e0!3m2!1str!2str!4v1709930711640!5m2!1str!2str" width="800" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </footer>

@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./static/output.css" rel="stylesheet">
 </head>
-<body onload="loadItems()" class=" bg-gradient-to-t from-blue-950 to-black">
+<body onload="loadItems()" class=" bg-black">
   <custom-header></custom-header>
-    <select id="c" class="m-8" onchange="loadItems(c.value)">
+    <select id="c" class="m-8 w-auto p-4 rounded-xl font-custom3 text-xl opacity-70 hover:opacity-100 transition" onchange="loadItems(c.value)">
       <option value="0">Kategori Seç</option>
       <option value="yuzuk">Yüzük</option>
       <option value="taki">Takı</option>
@@ -21,7 +21,7 @@
       if (filter === undefined || filter === "0") {
         for (let i=1; i<=parseInt(localStorage.getItem("productCount")); i++) {
           var productBG = document.createElement('div');
-          productBG.classList="w-92 h-auto p-4 max-h-96 bg-blue-950 rounded grid place-items-center"
+          productBG.classList="w-92 h-auto p-4 max-h-96 rounded grid place-items-center bg-black border-4 border-yellow-500 opacity-90"
           productBG.id="productBG"+i
           document.getElementById('gridy').appendChild(productBG)
 
@@ -34,7 +34,7 @@
           var productPic=document.createElement("img")
           productPic.type = "img"
           productPic.src = localStorage.getItem("product"+i+"pic")
-          productPic.classList="w-full h-full border-4 border-jewYellow rounded-lg hover:scale-110 transition"
+          productPic.classList="w-full h-full border-4 border-yellow-500 rounded-lg hover:scale-110 transition opacity-100"
           productPic.id="productPic"+i
           productPic.addEventListener('click', function(event){
             document.getElementById("productPic" + i).classList.remove("hover:scale-110")
