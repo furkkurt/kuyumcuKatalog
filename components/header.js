@@ -11,8 +11,8 @@ template.innerHTML = `
     <header class="flex items-center justify-between bg-transparent h-16">
       <!-- Logo -->
 	  <img src="assets/logo.jpg" class="pl-2 h-16" />
-      <div class="font-custom1 text-amber-300 overflow-hidden mx-16 hidden jusitfy-items-right lg:block [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
-        <p class="animate-infinite-scroll w-screen whitespace-nowrap pl-128 text-xl animate-fade">
+      <div class="font-custom1 text-amber-300 overflow-hidden mx-16 hidden justify-items-right lg:block [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+        <p class="animate-infinite-scroll w-screen whitespace-nowrap pl-128 text-xl grid justify-items-end">
           TÜRKİYE'DE KUYUMCULUĞUN BİR NUMARALI ADRESİ !!!
         </p>
       </div>
