@@ -10,7 +10,7 @@
     <img id="fsPic" src="" class="w-auto h-5/6 rounded-xl border-yellow-500 border-4"/>
   </div>
   <custom-header></custom-header>
-    <select id="c" class="bg-black text-yellow-500 hover:scale-110 m-8 w-auto p-4 rounded-xl font-custom3 text-xl opacity-70 hover:opacity-100 transition border-2 border-yellow-500" onchange="loadItems(c.value)">
+    <select id="c" class="bg-black text-yellow-500 hover:scale-110 ml-16 mt-16 w-auto p-4 rounded-xl font-custom3 text-xl opacity-70 hover:opacity-100 transition border-2 border-yellow-500" onchange="loadItems(c.value)">
       <option value="0">Kategori Seç</option>
       <option value="yuzuk">Yüzük</option>
       <option value="taki">Takı</option>
@@ -24,12 +24,12 @@
       if (filter === undefined || filter === "0") {
         for (let i=1; i<=parseInt(localStorage.getItem("productCount")); i++) {
           var productBG = document.createElement('div');
-          productBG.classList="w-92 h-auto p-4 max-h-96 rounded-xl border-opacity-70 hover:border-opacity-100 transition grid place-items-center bg-black border-4 border-yellow-500 opacity-90"
+          productBG.classList="w-92 h-auto p-4 max-h-96 rounded-xl border-opacity-70 hover:border-opacity-100 transition grid place-items-center bg-black border-2 border-yellow-500 opacity-90"
           productBG.id="productBG"+i
           document.getElementById('gridy').appendChild(productBG)
 
           var productPicBG=document.createElement("div")
-          productPicBG.classList="w-auto h-auto grid place-items-center text-2xl text-white font-custom3 gap-4"
+          productPicBG.classList="w-full h-full grid place-items-center text-2xl text-white font-custom3 gap-4"
           productPicBG.id="productPicBG"+i
           productPicBG.textContent = localStorage.getItem("product" + i + "name")
           document.getElementById("productBG"+i).appendChild(productPicBG)
@@ -37,7 +37,7 @@
           var productPic=document.createElement("img")
           productPic.type = "img"
           productPic.src = localStorage.getItem("product"+i+"pic")
-          productPic.classList="max-w-32 max-h-64 border-4 border-yellow-500 rounded-lg hover:scale-110 transition opacity-100"
+          productPic.classList="w-64 h-64 border-2 border-yellow-500 rounded-lg hover:scale-110 transition opacity-100"
           productPic.id="productPic"+i
           productPic.addEventListener('click', function(event){
             //document.getElementById("productPic" + i).classList.remove("hover:scale-110")
@@ -47,7 +47,7 @@
 
             var backBut = document.createElement("button")
             backBut.type = "button"
-            backBut.classList="bg-black w-16 h-16 left-16 top-16 fixed text-white font-custom3 rounded-xl text-4xl text-center hover:scale-110 transition z-50"
+            backBut.classList="bg-black w-16 h-16 left-16 top-16 fixed text-yellow-500 font-custom3 rounded-xl text-4xl text-center hover:scale-110 transition z-50 border-4 border-yellow-500"
             backBut.textContent = "<"
             backBut.addEventListener("click", function(event){
               document.getElementById("fsPicDiv").classList.add("hidden")
