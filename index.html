@@ -22,6 +22,8 @@
   <script>
     function loadItems(filter) {
       if (filter === undefined || filter === "0") {
+        if (filter == 0)
+          document.getElementById("gridy").innerHTML = ""
         for (let i=1; i<=parseInt(localStorage.getItem("productCount")); i++) {
           var productBG = document.createElement('div');
           productBG.classList="w-92 h-auto p-4 max-h-96 rounded-xl border-opacity-70 hover:border-opacity-100 transition grid place-items-center bg-black border-2 border-yellow-500 opacity-90"
