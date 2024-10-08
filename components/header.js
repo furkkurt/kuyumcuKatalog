@@ -17,11 +17,11 @@ template.innerHTML = `
         </p>
       </div>
       <!-- Menu Items -->
-      <div class="justify-around space-x-4 pr-8 whitespace-nowrap text-xl font-bold hover:scale-110 transition">
-        <a href="index.html" class="text-white font-custom3 hover:text-yellow-500 hover:scale-110 transition">Anasayfa</a>
-        <a href="about.html" class="text-white font-custom3 hover:text-yellow-500 hover:scale-110 transition">Hakkımızda</a>
-        <a href="hizmetler.html" class="text-white font-custom3 hover:text-yellow-500 hover:scale-110 transition">Hizmetler</a>
-        <a href="blog.html" class="text-white font-custom3 hover:text-yellow-500 hover:scale-110 transition">Blog</a>
+      <div class="justify-around space-x-4 pr-8 whitespace-nowrap text-xl font-bold transition">
+        <button onclick="scrollToTop()" class="text-white font-custom3 hover:text-yellow-500 hover:scale-110 transition">Anasayfa</button>
+        <button onclick="scrollToAbout()" class="text-white font-custom3 hover:text-yellow-500 hover:scale-110 transition">Hakkımızda</button>
+        <button onclick="scrollToServices()" class="text-white font-custom3 hover:text-yellow-500 hover:scale-110 transition">Hizmetler</button>
+        <button onclick="scrollToBottom()" class="text-white font-custom3 hover:text-yellow-500 hover:scale-110 transition">İletişim</button>
       </div>
     
     </header>

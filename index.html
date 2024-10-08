@@ -1,12 +1,12 @@
 <!doctype html>
-<html>
+<html class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./static/output.css" rel="stylesheet">
 </head>
-<body onload="loadItems()" class=" bg-black">
-  <div id="fsPicDiv" class="w-screen h-screen bg-black fixed top-0 left-0 z-50 hidden grid justify-items-center place-items-center">
+<body onload="loadItems()" class=" bg-gradient-to-b from-black to-blue-950">
+  <div id="fsPicDiv" class="w-screen h-screen bfixed top-0 left-0 z-50 hidden grid justify-items-center place-items-center">
     <img id="fsPic" src="" class="w-auto h-5/6 rounded-xl border-yellow-500 border-4"/>
   </div>
   <custom-header></custom-header>
@@ -18,6 +18,31 @@
     </select>
     <div class="grid grid-cols-4 grid-rows-auto gap-16 m-16 min-h-screen" id="gridy">
     </div>
+
+  <p class="mt-16 w-full text-center text-4xl text-white font-custom3" id="about">Hakkımızda</p>
+
+  <div class="grid grid-cols-2 scroll-smooth">
+    <div class="p-32">
+      <img src="assets/logo2.png" class="w-auto"/>
+    </div>
+    <div class="grid place-content-center">
+      <p class="text-white font-custom3 text-lg">
+        2022 yılında itibaren kurulan Mert Döviz ve Altın Sınırlı Yetkili Müessese A.Ş siz değerli müşterilerimize hizmet vermektedir. Döviz ve Altın alım satım faaliyetlerinde güven ve şeffaflıktan ödün vermeden en hızlı ve kaliteli hizmet vermeyi ilke edinmiştir.
+      </p>
+    </div>
+  </div>
+
+  <div class="m-16" id="services">
+    <p class="w-full text-center text-4xl text-white font-custom3">Hizmetler</p>
+    <p class="p-16 text-white font-custom3">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus interdum augue, elementum venenatis massa congue in. Proin id est ante. Aliquam sapien neque, cursus vel eros id, posuere dictum tellus. Suspendisse et porttitor sem, sed faucibus odio. Nam ac vestibulum leo, eget pellentesque risus. Duis mattis, velit vitae tristique consequat, tellus nulla dapibus turpis, et auctor tellus risus quis felis. Mauris consectetur mi magna, quis imperdiet est tincidunt ut. Integer posuere lorem a tincidunt dictum. Proin sodales metus nec massa hendrerit placerat. Praesent id turpis vitae erat porta viverra.<br><br>
+      Donec nec scelerisque eros. In rutrum diam non mi gravida finibus. Aliquam eget magna neque. Vivamus quis sodales turpis, laoreet lobortis metus. Proin fringilla, mauris a dictum porttitor, felis mauris dapibus tortor, sodales gravida neque lorem eget nisi. Nullam convallis malesuada accumsan. Morbi mattis congue neque, eget sagittis ligula porttitor quis.<br><br>
+      Quisque porta, tortor non dapibus sodales, erat leo gravida sapien, quis efficitur turpis massa quis velit. Suspendisse ultricies, urna id bibendum vehicula, elit nulla vehicula tellus, eu dignissim neque magna sit amet magna. Nunc eleifend, est dapibus sodales rutrum, justo metus vehicula mi, sed aliquet sapien arcu vitae massa. Ut luctus risus in rhoncus convallis. Vivamus in vehicula eros. Quisque lacus nulla, viverra sed tincidunt at, posuere sit amet lacus. Nulla facilisi.<br><br>
+      Duis sed odio nisl. Sed lobortis nulla consectetur, rutrum orci ut, pretium elit. Duis porttitor arcu id blandit scelerisque. Sed nec euismod augue. Etiam semper sodales quam sed tristique. Ut ut nisl feugiat, aliquam lectus quis, hendrerit orci. Fusce sit amet euismod quam. Nulla suscipit ac elit pellentesque volutpat. In at nibh eget ex ultrices sodales quis non ex. Mauris elementum viverra sem eu euismod. Proin suscipit augue non tellus bibendum, nec commodo lorem rutrum.<br><br>
+      Proin ultricies magna vel vehicula bibendum. Nullam nec placerat mauris. Phasellus quis velit in elit ultrices efficitur. Maecenas quis nisi vitae lorem porta malesuada. Quisque vel finibus ipsum, eget malesuada purus. Proin eget nisi maximus, ultrices libero quis, hendrerit lectus. Maecenas porta odio ac sem accumsan tincidunt. Integer sollicitudin mattis congue. Vivamus suscipit finibus lectus ut accumsan. Nullam faucibus dolor gravida dictum lacinia. Sed a lacus metus.<br><br>
+    </p>
+  </div>
+
   <custom-footer></custom-footer>
   <script>
     function loadItems(filter) {
@@ -78,6 +103,29 @@
         }
       }
     }
+
+    function scrollToAbout() {
+      document.getElementById("about").scrollIntoView({behavior: "smooth"})
+    }
+
+    function scrollToServices() {
+      document.getElementById("services").scrollIntoView({behavior: "smooth"})
+    }
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // This makes the scroll smooth
+      });
+    }
+
+    function scrollToBottom() {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth' // This makes the scroll smooth
+      });
+    }
+
   </script>
   <script src="./components/header.js"></script>
   <script src="./components/footer.js"></script>
